@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<assembly
+        xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0
+        http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+    <id>xu</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <scope>runtime</scope>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>com.fasterxml.jackson.core:jackson-databind</include>
+            </includes>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <excludes>
+                    <!--可以排除 LICENSE 文件 同理可以使用这个方法排除class文件,也可以用用来保留某一个jar里面的配置文件 -->
+                    <exclude>META-INF/LICENSE</exclude>
+                </excludes>
+            </unpackOptions>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <excludes>
+                <exclude>org.apache.commons:commons-lang3</exclude>
+            </excludes>
+            <unpack>true</unpack>
+        </dependencySet>
+    </dependencySets>
+
+
+</assembly>
+

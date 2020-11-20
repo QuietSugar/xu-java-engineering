@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>project-component-parent</artifactId>
+        <groupId>name.xu</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../project-component/parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>package-assembly</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <!-- 打包后文件的名称,最终名称还要加上描述文件中的ID-->
+                    <finalName>package-assembly</finalName>
+                    <!-- 启用后就不加上句提到的ID-->
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <!--描述文件路径-->
+                        <descriptor>assemblies/xu/xu.xml</descriptor>
+<!--                        <descriptor>assemblies/jar-with-dependencies.xml</descriptor>-->
+                    </descriptors>
+                    <outputDirectory>output</outputDirectory>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <!-- 绑定到package生命周期阶段上 -->
+                        <phase>package</phase>
+                        <goals>
+                            <!-- 绑定到package生命周期阶段上 -->
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
