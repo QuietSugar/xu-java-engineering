@@ -1,7 +1,7 @@
 # xu-engineering
 
 #### 介绍
-工程化,打包项目
+工程化:打包项目,cli形式运行代码
 
 #### 运行一个jar
 - 如果配置了`MANIFEST.MF`

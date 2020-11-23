@@ -4,12 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>name.xu</groupId>
-    <artifactId>xu-engineering</artifactId>
+    <artifactId>xu-java-engineering</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>package-assembly</module>
         <module>package-assembly-simplest</module>
+        <module>run-cli</module>
+        <module>package-shade</module>
     </modules>
 </project>
