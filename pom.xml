@@ -13,5 +13,6 @@
         <module>package-assembly-simplest</module>
         <module>run-cli</module>
         <module>package-shade</module>
+        <module>run-cli/spring-shell</module>
     </modules>
 </project>
