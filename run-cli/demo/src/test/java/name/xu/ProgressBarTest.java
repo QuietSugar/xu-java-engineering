@@ -10,7 +10,7 @@ public class ProgressBarTest {
     @Test
     public void printProgress() throws InterruptedException {
 
-        //ProgressBar progressBar = new ProgressBar();
-        //progressBar.printProgress();
+        ProgressBar progressBar = new ProgressBar();
+        progressBar.printProgress();
     }
 }
